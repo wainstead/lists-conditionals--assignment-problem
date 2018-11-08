@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+
   render() {
+    // const mystyle = {
+    //   color: "red",
+    //   size: "12px"
+    // };
     return (
       <div className="App">
         <ol>
@@ -14,7 +19,11 @@ class App extends Component {
           <li>When you click a CharComponent, it should be removed from the entered text.</li>
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
+        <hr/>
+        <input type="text"></input>
+        <p>This will contain the length count.</p>
       </div>
+
     );
   }
 }
