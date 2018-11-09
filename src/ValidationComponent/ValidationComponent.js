@@ -9,7 +9,6 @@ const validationComponent = (props) => {
     }
     return (
         <div>
-            <p className="vcp">Hello {props.name}!</p>
             <p className="vcp">The length of the string is {props.strlength}</p>
             <p className="vcp">{msg}</p>
         </div>

@@ -19,31 +19,29 @@ class App extends Component {
   }
 
   deleteCharacterHandler = (idx) => {
-    console.log("delete char called");
+    //console.log("delete char called");
     const currentstr = this.state.strcontents.split("");
     currentstr.splice(idx, 1);
     const newstring = currentstr.join("");
     this.setState({
-      strlength: newstring.length, 
-      strcontents: newstring 
+      strlength: newstring.length,
+      strcontents: newstring
     })
   }
   render() {
-
+    // "Char Woman" was a Monty Python character, in one of the Gilliam animations.
     let charwomen = (
       <div>
         {this.state.strcontents.split("").map((letter, idx) => {
           return <CharComponent
             key={idx}
             click={() => this.deleteCharacterHandler(idx)}
-            //click={(event) => console.log(event)}
             letter={letter}
             idx={idx} />
         })
         }
       </div>
     );
-    console.log('charwomen: ' + typeof charwomen);
 
     return (
       <div className="App">
@@ -57,9 +55,13 @@ class App extends Component {
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
         <hr />
-        <input type="text" onChange={this.strLengthChangeHandler} value={this.state.strcontents}></input>
+        <input type="text"
+          onChange={this.strLengthChangeHandler}
+          value={this.state.strcontents}></input>
         <p>Current length of the input: {this.state.strlength}</p>
-        <ValidationComponent name="sailor" strlength={this.state.strlength} />
+        <ValidationComponent
+          strlength={this.state.strlength}
+        />
         {charwomen}
       </div>
 
